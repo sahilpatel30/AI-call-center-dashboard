@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Agent John",
+      "phone": "+919106657919",
+      "status": "busy"
+    },
+    {
+      "name": "Agent Meera",
+      "phone": "+919913730306",
+      "status": "busy"
+    },
+    {
+        "name": "Agent Sanchit",
+        "phone": "+18562031878",  
+        "status": "available"
+    }, 
+    {
+        "name": "Agent Tabby",
+        "phone": "+14342384194",  
+        "status": "busy"
+    },
+    {
+        "name": "Agent Ram",
+        "phone": "+919099472311",  
+        "status": "busy"
+    }     
+]
+  
