@@ -1,18 +1,15 @@
-from twilio.rest import Client
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+from twilio.rest import Client
 
 load_dotenv()
 
-# Safe fallback logic
-account_sid = os.getenv("TWILIO_ACCOUNT_SID")
-auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+# Twilio setup
+account_sid = "AC9995db683a0351c6527e93ee7a4f3b82"
+auth_token = "a352936033b4fa24d8d032fbb963f092"
 
-# If not loaded from env, use hardcoded for local
-if not account_sid:
-    account_sid = "AC9995db683a0351c6527e93ee7a4f3b82"
-if not auth_token:
-    auth_token = "a352936033b4fa24d8d032fbb963f092"
+if not account_sid or not auth_token:
+    raise Exception("Twilio credentials not found. Set them in .env (locally) or Streamlit Secrets (in cloud).")
     
 client = Client(account_sid, auth_token)
 
