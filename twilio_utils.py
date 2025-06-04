@@ -6,7 +6,7 @@ load_dotenv()
 
 # Twilio setup
 account_sid = "AC9995db683a0351c6527e93ee7a4f3b82"
-auth_token = "a5279889eaeb1e8f22d4f5ac11519a68"
+auth_token = "a352936033b4fa24d8d032fbb963f092"
 client = Client(account_sid, auth_token)
 
 def fetch_call_logs(limit=20):
