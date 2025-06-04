@@ -4,9 +4,16 @@ import os
 
 load_dotenv()
 
-# Twilio setup
-account_sid = "AC9995db683a0351c6527e93ee7a4f3b82"
-auth_token = "a352936033b4fa24d8d032fbb963f092"
+# Safe fallback logic
+account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+
+# If not loaded from env, use hardcoded for local
+if not account_sid:
+    account_sid = "AC9995db683a0351c6527e93ee7a4f3b82"
+if not auth_token:
+    auth_token = "a352936033b4fa24d8d032fbb963f092"
+    
 client = Client(account_sid, auth_token)
 
 def fetch_call_logs(limit=20):
